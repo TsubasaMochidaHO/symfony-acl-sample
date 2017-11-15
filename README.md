@@ -27,7 +27,7 @@ php -S localhost:4444 web/app_dev.php
 
 **User**: admin
 **Password**: admin
-**Roles**: ROLE_ADMIN
+**Roles**: ["ROLE_ADMIN"]
 
 **User**: tesseract
 **Password**: tesseract
@@ -54,9 +54,9 @@ implemented only in the showAction)
 
 # References
 
-- [How to Load Security Users from the Database] (http://symfony.com/doc/current/security/entity_provider.html#security-serialize-equatable)
-- [How to Implement a Simple Registration Form] (http://symfony.com/doc/current/doctrine/registration_form.html)
-- [SecurityBundle Configuration] (https://symfony.com/doc/current/reference/configuration/security.html)
+- [How to Load Security Users from the Database](http://symfony.com/doc/current/security/entity_provider.html#security-serialize-equatable)
+- [How to Implement a Simple Registration Form](http://symfony.com/doc/current/doctrine/registration_form.html)
+- [SecurityBundle Configuration](https://symfony.com/doc/current/reference/configuration/security.html)
 - [How to Work with Doctrine Associations / Relations](http://symfony.com/doc/current/doctrine/associations.html)
 - [Doctrine Event Listeners and Subscribers](http://symfony.com/doc/current/doctrine/event_listeners_subscribers.html)
 - [Basic Mapping](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/basic-mapping.html)
