@@ -1,0 +1,32 @@
+group_index:
+    path:     /
+    defaults: { _controller: "DoCarmoAppBundle:Group:index" }
+    methods:  GET
+
+group_show:
+    path:     /{id}/show
+    defaults: { _controller: "DoCarmoAppBundle:Group:show" }
+    methods:  GET
+
+group_new:
+    path:     /new
+    defaults: { _controller: "DoCarmoAppBundle:Group:new" }
+    methods:  [GET, POST]
+
+group_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DoCarmoAppBundle:Group:edit" }
+    methods:  [GET, POST]
+
+group_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DoCarmoAppBundle:Group:delete" }
+    methods:  DELETE
+
+group_role:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/grouprole.yml"
+    prefix:   /role
+
+group_profile:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/groupprofile.yml"
+    prefix:   /profile

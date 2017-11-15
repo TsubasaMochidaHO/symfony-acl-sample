@@ -1,0 +1,62 @@
+security:
+    encoders:
+        DoCarmo\AppBundle\Entity\User:
+            algorithm: bcrypt
+
+    acl:
+        connection: default
+
+    providers:
+        db_user_provider:
+            entity:
+                class: DoCarmoAppBundle:User
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        # Examples:
+        main:
+            pattern: ^/
+            provider: db_user_provider
+            anonymous: ~
+            http_basic: ~
+            #form_login:
+                ## submit the login form here
+                #check_path: /login-check
+
+                ## the user is redirected here when they need to log in
+                #login_path: /login
+
+                ## if true, forward the user to the login form instead of redirecting
+                #use_forward: true
+
+                ## login success redirecting options (read further below)
+                #always_use_default_target_path: false
+                #default_target_path:            /
+                #target_path_parameter:          _target_path
+                #use_referer:                    false
+
+                ## field names for the username and password fields
+                #username_parameter: _username
+                #password_parameter: _password
+
+                ## csrf token options
+                #csrf_parameter:       _csrf_token
+                #csrf_token_id:        authenticate
+
+                ## by default, the login form *must* be a POST, not a GET
+                #post_only:      true
+                #remember_me:    true
+
+                ## by default, a session must exist before submitting an authentication request
+                ## if false, then Request::hasPreviousSession is not called during authentication
+                #require_previous_session: true
+
+    #access_control:
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #- { path: ^/user, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #- { path: ^/profile, roles: ROLE_USER }
+        #- { path: ^/, roles: ROLE_ADMIN }

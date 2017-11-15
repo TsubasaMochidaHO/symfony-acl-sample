@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Systemroles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for systemRole in systemRoles %}
+            <tr>
+                <td><a href="{{ path('role_show', { 'id': systemRole.id }) }}">{{ systemRole.id }}</a></td>
+                <td>{{ systemRole.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('role_show', { 'id': systemRole.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('role_edit', { 'id': systemRole.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('role_new') }}">Create a new systemRole</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+role_index:
+    path:     /
+    defaults: { _controller: "DoCarmoAppBundle:SystemRole:index" }
+    methods:  GET
+
+role_show:
+    path:     /{id}/show
+    defaults: { _controller: "DoCarmoAppBundle:SystemRole:show" }
+    methods:  GET
+
+role_new:
+    path:     /new
+    defaults: { _controller: "DoCarmoAppBundle:SystemRole:new" }
+    methods:  [GET, POST]
+
+role_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DoCarmoAppBundle:SystemRole:edit" }
+    methods:  [GET, POST]
+
+role_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DoCarmoAppBundle:SystemRole:delete" }
+    methods:  DELETE

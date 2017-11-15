@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Grouproles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for groupRole in groupRoles %}
+            <tr>
+                <td><a href="{{ path('group-role_show', { 'id': groupRole.id }) }}">{{ groupRole.id }}</a></td>
+                <td>{{ groupRole.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('group-role_show', { 'id': groupRole.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('group-role_edit', { 'id': groupRole.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('group-role_new') }}">Create a new groupRole</a>
+        </li>
+    </ul>
+{% endblock %}

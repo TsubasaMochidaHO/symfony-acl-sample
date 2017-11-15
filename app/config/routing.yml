@@ -1,0 +1,3 @@
+do_carmo_app:
+    resource: "@DoCarmoAppBundle/Resources/config/routing.yml"
+    prefix:   /

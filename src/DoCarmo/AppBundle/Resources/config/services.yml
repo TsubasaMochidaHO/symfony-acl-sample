@@ -1,0 +1,8 @@
+services:
+    DoCarmo\AppBundle\Controller\:
+        resource: '../../Controller'
+        autowire: true
+        tags: ['controller.service_arguments']
+#    do_carmo_app.example:
+#        class: DoCarmo\AppBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

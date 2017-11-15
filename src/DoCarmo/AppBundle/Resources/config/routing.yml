@@ -1,0 +1,24 @@
+do_carmo_app_login:
+    path:     /login
+    defaults: { _controller: DoCarmoAppBundle:Security:login }
+
+do_carmo_app:
+    path:     /
+    defaults: { _controller: DoCarmoAppBundle:Default:index }
+
+do_carmo_app_user:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+do_carmo_app_profile:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/profile.yml"
+    prefix:   /profile
+
+do_carmo_app_group:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/group.yml"
+    prefix:   /group
+
+do_carmo_app_role:
+    resource: "@DoCarmoAppBundle/Resources/config/routing/systemrole.yml"
+    prefix:   /role
+
